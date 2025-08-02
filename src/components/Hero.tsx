@@ -144,25 +144,24 @@ const Hero = () => {
                 </div>
                 
                 {/* Content */}
-                <div className="absolute inset-4 rounded-full bg-gradient-to-br from-card/80 to-background/60 backdrop-blur-xl border border-border/20 flex items-center justify-center">
-                  <div className="text-center space-y-4 z-10">
-                    {/* Profile placeholder with tech elements */}
-                    <div className="relative w-32 h-32 mx-auto">
-                      <div className="w-full h-full bg-gradient-to-br from-neon/20 via-neon-glow/10 to-neon/5 rounded-full border border-neon/20 flex items-center justify-center backdrop-blur-sm">
-                        <div className="text-4xl text-neon/70">👨‍💻</div>
-                      </div>
-                      {/* Tech stack indicators */}
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-neon/20 rounded-full border border-neon/30 flex items-center justify-center backdrop-blur-sm">
-                        <Code className="w-4 h-4 text-neon" />
-                      </div>
-                      <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-neon-glow/20 rounded-full border border-neon/30 flex items-center justify-center backdrop-blur-sm">
-                        <Database className="w-4 h-4 text-neon" />
-                      </div>
-                    </div>
+                <div className="absolute inset-4 rounded-full bg-gradient-to-br from-card/80 to-background/60 backdrop-blur-xl border border-border/20 overflow-hidden">
+                  <div className="relative w-full h-full">
+                    {/* Profile Image */}
+                    <img 
+                      src="/lovable-uploads/566fbbcd-63ba-4332-ad66-1c4a0719763f.png"
+                      alt="Kovi Venkata Likith Sai - AI & Data Science Enthusiast"
+                      className="w-full h-full object-cover object-center rounded-full"
+                    />
                     
-                    <div className="space-y-2">
-                      <p className="text-sm font-medium text-foreground">Profile Photo</p>
-                      <p className="text-xs text-muted-foreground/70">Coming Soon</p>
+                    {/* Overlay gradient for better integration */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent rounded-full"></div>
+                    
+                    {/* Tech stack indicators */}
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-neon/20 rounded-full border border-neon/30 flex items-center justify-center backdrop-blur-sm">
+                      <Code className="w-4 h-4 text-neon" />
+                    </div>
+                    <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-neon-glow/20 rounded-full border border-neon/30 flex items-center justify-center backdrop-blur-sm">
+                      <Database className="w-4 h-4 text-neon" />
                     </div>
                   </div>
                 </div>
