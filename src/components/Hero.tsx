@@ -148,7 +148,7 @@ const Hero = () => {
                   <div className="relative w-full h-full">
                     {/* Profile Image */}
                     <img 
-                      src="/lovable-uploads/566fbbcd-63ba-4332-ad66-1c4a0719763f.png"
+                      src="/lovable-uploads/c0fe98f9-143d-4a0f-a6d1-d5b53c9444c1.png"
                       alt="Kovi Venkata Likith Sai - AI & Data Science Enthusiast"
                       className="w-full h-full object-cover object-center rounded-full"
                     />
