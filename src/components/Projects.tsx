@@ -53,7 +53,7 @@ const Projects = () => {
     {
       title: "Voyance AI Product",
       description: "AI-powered product leveraging machine learning algorithms for predictive analytics. Includes data processing pipeline and intelligent insights generation.",
-      image: "/api/placeholder/400/250",
+      image: "/lovable-uploads/cc93f87b-2fa1-4aff-aa10-9ebc30e71c03.png",
       tech: ["Python", "Machine Learning", "TensorFlow", "Pandas", "Scikit-learn"],
       category: "AI/ML",
       features: [
