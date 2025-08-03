@@ -48,10 +48,10 @@ const Contact = () => {
       };
 
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'service_as8t0sf', // Your EmailJS service ID
+        'template_fg449t2', // Your EmailJS template ID
         templateParams,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        'pjMwaBkXXdFR2QrP-' // Your EmailJS public key
       );
 
       toast({
