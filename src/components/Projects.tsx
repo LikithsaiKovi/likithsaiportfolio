@@ -23,7 +23,7 @@ const Projects = () => {
     {
       title: "Power BI Sales Dashboard",
       description: "Comprehensive sales analytics dashboard providing insights into market trends, KPIs, and performance metrics. Interactive visualizations for data-driven decision making.",
-      image: "/api/placeholder/400/250",
+      image: "/lovable-uploads/0223f1b3-30f9-4af3-a021-991d8d380a95.png",
       tech: ["Power BI", "DAX", "Excel", "Data Modeling"],
       category: "Data Analytics",
       features: [
@@ -107,11 +107,12 @@ const Projects = () => {
             >
               <CardContent className="p-0">
                 {/* Project Image */}
-                <div className="relative overflow-hidden bg-gradient-to-br from-neon/10 to-neon-glow/10 h-48 flex items-center justify-center">
-                  <div className="text-center space-y-2">
-                    <div className="w-16 h-16 bg-neon/20 rounded-lg mx-auto border border-neon/30"></div>
-                    <p className="text-sm text-muted-foreground">Project Preview</p>
-                  </div>
+                <div className="relative overflow-hidden bg-gradient-to-br from-neon/10 to-neon-glow/10 h-48">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="flex gap-3">
