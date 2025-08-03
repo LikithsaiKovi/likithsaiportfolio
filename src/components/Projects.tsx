@@ -8,7 +8,7 @@ const Projects = () => {
     {
       title: "Weather Forecasting Dashboard",
       description: "Real-time weather application with comprehensive forecasting using OpenWeather API. Features include current conditions, 5-day forecast, and location-based weather data.",
-      image: "/api/placeholder/400/250",
+      image: "/lovable-uploads/4eca89fe-20e8-47b4-bc23-08c6f072c45c.png",
       tech: ["HTML", "CSS", "JavaScript", "OpenWeather API", "Chart.js"],
       category: "Web Development",
       features: [
