@@ -116,13 +116,17 @@ const Projects = () => {
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="flex gap-3">
-                      <Button size="sm" variant="secondary" className="backdrop-blur-sm">
-                        <Eye className="w-4 h-4 mr-2" />
-                        Demo
+                      <Button size="sm" variant="secondary" className="backdrop-blur-sm" asChild>
+                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                          <Eye className="w-4 h-4 mr-2" />
+                          Demo
+                        </a>
                       </Button>
-                      <Button size="sm" variant="secondary" className="backdrop-blur-sm">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
+                      <Button size="sm" variant="secondary" className="backdrop-blur-sm" asChild>
+                        <a href={project.codeLink} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -171,13 +175,17 @@ const Projects = () => {
 
                   {/* Project Links */}
                   <div className="flex gap-3">
-                    <Button size="sm" variant="outline" className="flex-1 border-neon/30 text-neon hover:bg-neon hover:text-neon-foreground">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
+                    <Button size="sm" variant="outline" className="flex-1 border-neon/30 text-neon hover:bg-neon hover:text-neon-foreground" asChild>
+                      <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Live Demo
+                      </a>
                     </Button>
-                    <Button size="sm" variant="outline" className="flex-1 border-neon/30 text-neon hover:bg-neon hover:text-neon-foreground">
-                      <Github className="w-4 h-4 mr-2" />
-                      View Code
+                    <Button size="sm" variant="outline" className="flex-1 border-neon/30 text-neon hover:bg-neon hover:text-neon-foreground" asChild>
+                      <a href={project.codeLink} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-2" />
+                        View Code
+                      </a>
                     </Button>
                   </div>
                 </div>
