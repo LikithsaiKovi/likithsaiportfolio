@@ -69,7 +69,7 @@ const Projects = () => {
     }
   ];
 
-  const categories = ["All", "Web Development", "Data Analytics", "Full Stack", "AI/ML"];
+  const categories = ["All", "Web Development", "Data Analytics", "AI/ML"];
   
   const filteredProjects = selectedCategory === "All" 
     ? projects 
@@ -108,7 +108,7 @@ const Projects = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {filteredProjects.map((project, index) => (
             <Card 
-              key={index}
+              key={`${project.title}-${selectedCategory}`}
               className="border-border/50 hover:border-neon/30 transition-all duration-500 hover:shadow-xl hover:shadow-neon/10 group overflow-hidden animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
