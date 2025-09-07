@@ -81,9 +81,12 @@ const About = () => {
             <Button 
               size="lg" 
               className="bg-neon text-neon-foreground hover:bg-neon/90 neon-glow"
+              asChild
             >
-              <Download className="w-5 h-5 mr-2" />
-              Download Resume
+              <a href="https://drive.google.com/file/d/1_u7klZ-KSC7TYEGPIHXBUle_VNrS03dB/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
+                <Download className="w-5 h-5 mr-2" />
+                Download Resume
+              </a>
             </Button>
           </div>
 
