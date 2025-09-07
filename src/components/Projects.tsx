@@ -18,7 +18,7 @@ const Projects = () => {
         "Responsive design"
       ],
       demoLink: "#",
-      codeLink: "#"
+      codeLink: "https://github.com/LikithsaiKovi/Weather-Dashboard-Project"
     },
     {
       title: "Power BI Sales Dashboard",
@@ -33,7 +33,7 @@ const Projects = () => {
         "Automated reporting"
       ],
       demoLink: "#",
-      codeLink: "#"
+      codeLink: "https://github.com/LikithsaiKovi/Chocolate-Sales-Dashboard"
     },
     {
       title: "Agri AI",
@@ -48,7 +48,7 @@ const Projects = () => {
         "Sustainable farming insights"
       ],
       demoLink: "#",
-      codeLink: "#"
+      codeLink: "https://github.com/LikithsaiKovi/Agri-AI"
     },
     {
       title: "Voyance AI Product",
