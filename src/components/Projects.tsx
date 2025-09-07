@@ -36,16 +36,16 @@ const Projects = () => {
       codeLink: "#"
     },
     {
-      title: "Restaurant Web Application",
-      description: "Modern restaurant website with online menu, reservation system, and responsive design. Built with Flask backend and modern frontend technologies.",
-      image: "/api/placeholder/400/250",
-      tech: ["Flask", "Python", "HTML", "CSS", "JavaScript", "SQLite"],
-      category: "Full Stack",
+      title: "Agri AI",
+      description: "AI-powered agricultural platform leveraging IoT, Big Data, and machine learning for smarter, more productive, and sustainable farming solutions.",
+      image: "/lovable-uploads/c4c01fd4-b5b1-48fb-9438-cff3c17b6341.png",
+      tech: ["React", "Python", "TensorFlow", "IoT", "Machine Learning", "Big Data"],
+      category: "AI/ML",
       features: [
-        "Online menu system",
-        "Reservation booking",
-        "Admin dashboard",
-        "Mobile responsive"
+        "Smart crop monitoring",
+        "Predictive analytics",
+        "IoT sensor integration",
+        "Sustainable farming insights"
       ],
       demoLink: "#",
       codeLink: "#"
