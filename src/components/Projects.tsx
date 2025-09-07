@@ -2,8 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Eye } from "lucide-react";
+import { useState } from "react";
 
 const Projects = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const projects = [
     {
       title: "Weather Forecasting Dashboard",
@@ -68,6 +70,10 @@ const Projects = () => {
   ];
 
   const categories = ["All", "Web Development", "Data Analytics", "Full Stack", "AI/ML"];
+  
+  const filteredProjects = selectedCategory === "All" 
+    ? projects 
+    : projects.filter(project => project.category === selectedCategory);
 
   return (
     <section id="projects" className="py-20">
@@ -86,11 +92,12 @@ const Projects = () => {
           {categories.map((category) => (
             <Button
               key={category}
-              variant={category === "All" ? "default" : "outline"}
-              className={category === "All" 
+              variant={selectedCategory === category ? "default" : "outline"}
+              className={selectedCategory === category 
                 ? "bg-neon text-neon-foreground hover:bg-neon/90" 
                 : "border-neon/30 text-neon hover:bg-neon hover:text-neon-foreground"
               }
+              onClick={() => setSelectedCategory(category)}
             >
               {category}
             </Button>
@@ -99,7 +106,7 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <Card 
               key={index}
               className="border-border/50 hover:border-neon/30 transition-all duration-500 hover:shadow-xl hover:shadow-neon/10 group overflow-hidden animate-fade-in"
