@@ -10,6 +10,7 @@ import accentureCert from "@/assets/cert-accenture-forage.png";
 import nxtwaveCert from "@/assets/cert-nxtwave-genai.jpg";
 import ccbpCert from "@/assets/cert-ccbp-xpm.png";
 import novitechCert from "@/assets/cert-novitech-analytics.png";
+import questCert from "@/assets/cert-quest-2024.jpg";
 
 const Certifications = () => {
   const certifications = [
@@ -76,6 +77,14 @@ const Certifications = () => {
       image: novitechCert,
       link: "#",
       skills: ["Data Analytics", "Statistical Analysis", "Business Intelligence"]
+    },
+    {
+      title: "Quest 2024 - Certificate of Accomplishment",
+      issuer: "JNTUH",
+      date: "2024",
+      image: questCert,
+      link: "#",
+      skills: ["Technical Excellence", "Project Completion", "Innovation", "Problem Solving"]
     }
   ];
 
