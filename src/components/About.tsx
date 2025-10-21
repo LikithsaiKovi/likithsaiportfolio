@@ -88,6 +88,28 @@ const About = () => {
                 Download Resume
               </a>
             </Button>
+
+            {/* Learning Consistency Video */}
+            <div className="mt-8">
+              <h4 className="text-xl font-semibold mb-4">My Learning Journey</h4>
+              <Card className="border-border/50 hover:border-neon/30 transition-colors duration-300 overflow-hidden">
+                <CardContent className="p-0">
+                  <video 
+                    controls 
+                    className="w-full rounded-lg"
+                    poster=""
+                  >
+                    <source src="/videos/consistent-streak.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <div className="p-4">
+                    <p className="text-sm text-muted-foreground">
+                      A showcase of my consistent dedication to learning and growth in Data Science and AI
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
 
           {/* Education Timeline */}
