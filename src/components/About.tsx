@@ -83,7 +83,7 @@ const About = () => {
               className="bg-neon text-neon-foreground hover:bg-neon/90 neon-glow"
               asChild
             >
-              <a href="https://drive.google.com/file/d/1_u7klZ-KSC7TYEGPIHXBUle_VNrS03dB/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.google.com/file/d/1mX5rZzRrQ24CRODQijr0U3u3MN5-b-iw/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                 <Download className="w-5 h-5 mr-2" />
                 Download Resume
               </a>

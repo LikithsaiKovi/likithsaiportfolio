@@ -47,8 +47,8 @@ const Projects = () => {
         "IoT sensor integration",
         "Sustainable farming insights"
       ],
-      demoLink: "#",
-      codeLink: "https://github.com/LikithsaiKovi/Agri-AI"
+      demoLink: "https://likithsaikovi.github.io/Agri-Go/",
+      codeLink: "https://github.com/LikithsaiKovi/Agri-Go"
     },
     {
       title: "Voyance AI Product",
