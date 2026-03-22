@@ -11,6 +11,8 @@ import nxtwaveCert from "@/assets/cert-nxtwave-genai.jpg";
 import ccbpCert from "@/assets/cert-ccbp-xpm.png";
 import novitechCert from "@/assets/cert-novitech-analytics.png";
 import questCert from "@/assets/cert-quest-2024.jpg";
+import infotactCert from "@/assets/cert-infotact-internship.png";
+import kaggleCert from "@/assets/cert-kaggle-ai-agents.png";
 
 const Certifications = () => {
   const certifications = [
@@ -85,6 +87,22 @@ const Certifications = () => {
       image: questCert,
       link: "#",
       skills: ["Technical Excellence", "Project Completion", "Innovation", "Problem Solving"]
+    },
+    {
+      title: "Data Analytics Internship",
+      issuer: "Infotact Solutions",
+      date: "Dec 2025 - Mar 2026",
+      image: infotactCert,
+      link: "#",
+      skills: ["Data Analytics", "Problem Solving", "Real-world Projects"]
+    },
+    {
+      title: "5-Day AI Agents Intensive Course with Google",
+      issuer: "Kaggle & Google",
+      date: "Dec 2025",
+      image: kaggleCert,
+      link: "#",
+      skills: ["AI Agents", "Google AI", "Machine Learning", "LLMs"]
     }
   ];
 
