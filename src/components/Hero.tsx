@@ -1,207 +1,220 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail, Sparkles, Code, Database } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Code, Database, BarChart3 } from "lucide-react";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+const roles = ["AI & Data Science Enthusiast", "Full Stack Developer", "ML Engineer", "Data Analyst"];
 
 const Hero = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        setDisplayText(currentRole.slice(0, displayText.length + 1));
+        if (displayText.length === currentRole.length) {
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        setDisplayText(currentRole.slice(0, displayText.length - 1));
+        if (displayText.length === 0) {
+          setIsDeleting(false);
+          setRoleIndex((prev) => (prev + 1) % roles.length);
+        }
+      }
+    }, isDeleting ? 40 : 80);
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, roleIndex]);
+
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const techBadges = [
+    { icon: Code, label: "Python" },
+    { icon: Database, label: "ML" },
+    { icon: BarChart3, label: "Data Analysis" },
+  ];
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-background to-background/50">
-      {/* Enhanced Animated Background */}
-      <div className="absolute inset-0">
-        {/* Main gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gradient-to-r from-neon/20 via-neon-glow/15 to-transparent rounded-full blur-3xl animate-float opacity-60"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-l from-neon-glow/20 via-neon/10 to-transparent rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '1s' }}></div>
-        
-        {/* Additional floating elements */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-conic from-neon/5 via-transparent to-neon-glow/5 rounded-full blur-2xl animate-[spin_20s_linear_infinite] opacity-30"></div>
-        
-        {/* Mesh gradient overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-neon/5 to-transparent opacity-40"></div>
-        
-        {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,0,0.03)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black_40%,transparent_100%)]"></div>
-      </div>
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 gradient-mesh" />
+      <div className="absolute inset-0 dot-pattern opacity-40" />
+      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-neon/5 rounded-full blur-[120px] animate-morph" />
+      <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-neon-glow/5 rounded-full blur-[100px] animate-morph" style={{ animationDelay: "4s" }} />
 
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
-          <div className="space-y-8 animate-fade-in">
+          <motion.div
+            className="space-y-8"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
             {/* Status Badge */}
-            <div className="flex items-center gap-2 w-fit">
-              <div className="relative">
-                <div className="w-3 h-3 bg-neon rounded-full animate-pulse"></div>
-                <div className="absolute inset-0 w-3 h-3 bg-neon rounded-full animate-ping opacity-75"></div>
-              </div>
-              <span className="text-neon font-medium tracking-wide text-sm bg-neon/10 px-3 py-1 rounded-full border border-neon/20 backdrop-blur-sm">
+            <motion.div
+              className="inline-flex items-center gap-2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-neon" />
+              </span>
+              <span className="text-sm font-medium text-neon bg-neon/10 px-4 py-1.5 rounded-full border border-neon/20 backdrop-blur-sm font-mono">
                 Available for Freelance
               </span>
-            </div>
+            </motion.div>
 
             {/* Main Heading */}
-            <div className="space-y-6">
-              <div className="space-y-2">
-                <h1 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tight">
-                  <span className="block text-foreground">Hi,</span>
-                  <span className="block bg-gradient-to-r from-neon via-neon-glow to-neon bg-clip-text text-transparent">
-                    I'm Likith
-                  </span>
-                </h1>
-                <div className="flex items-center gap-3 text-xl md:text-2xl font-semibold text-muted-foreground">
-                  <Sparkles className="w-6 h-6 text-neon animate-pulse" />
-                  <span>AI & Data Science</span>
-                  <span className="text-neon font-bold">Enthusiast</span>
-                </div>
-              </div>
-
-              {/* Tech Icons */}
-              <div className="flex items-center gap-4 pt-2">
-                <div className="flex items-center gap-2 px-3 py-2 bg-card/50 border border-border/50 rounded-lg backdrop-blur-sm">
-                  <Code className="w-4 h-4 text-neon" />
-                  <span className="text-sm font-medium">Python</span>
-                </div>
-                <div className="flex items-center gap-2 px-3 py-2 bg-card/50 border border-border/50 rounded-lg backdrop-blur-sm">
-                  <Database className="w-4 h-4 text-neon" />
-                  <span className="text-sm font-medium">ML</span>
-                </div>
-                <div className="flex items-center gap-2 px-3 py-2 bg-card/50 border border-border/50 rounded-lg backdrop-blur-sm">
-                  <Database className="w-4 h-4 text-neon" />
-                  <span className="text-sm font-medium">Data Analysis</span>
-                </div>
-                <div className="w-2 h-2 bg-neon/30 rounded-full animate-pulse"></div>
+            <div className="space-y-4">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
+                <span className="block text-foreground">Hi, I'm</span>
+                <span className="block text-gradient">Likith</span>
+              </h1>
+              <div className="h-10 flex items-center">
+                <span className="text-xl md:text-2xl text-muted-foreground font-light">
+                  {displayText}
+                  <span className="inline-block w-0.5 h-6 bg-neon ml-1 animate-pulse" />
+                </span>
               </div>
             </div>
+
+            {/* Tech Badges */}
+            <motion.div
+              className="flex flex-wrap items-center gap-3"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              {techBadges.map((badge) => (
+                <div
+                  key={badge.label}
+                  className="flex items-center gap-2 px-4 py-2 glass-card rounded-xl text-sm font-medium hover-lift cursor-default"
+                >
+                  <badge.icon className="w-4 h-4 text-neon" />
+                  <span>{badge.label}</span>
+                </div>
+              ))}
+            </motion.div>
 
             {/* Description */}
-            <div className="space-y-4">
-              <p className="text-xl text-muted-foreground max-w-xl leading-relaxed font-light">
-                Turning data into meaningful impact through intelligent solutions.
-              </p>
-              <p className="text-lg text-muted-foreground/80 max-w-lg leading-relaxed">
-                Building the future with Python, Machine Learning, and modern web technologies.
-              </p>
-            </div>
+            <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+              Turning data into meaningful impact through intelligent solutions.
+              Building the future with Python, Machine Learning, and modern web technologies.
+            </p>
 
-            {/* Enhanced CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button 
-                size="lg" 
-                className="group relative bg-neon text-neon-foreground hover:bg-neon/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,255,0,0.3)]"
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              <Button
+                size="lg"
+                className="group bg-neon text-neon-foreground hover:bg-neon/90 transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--neon)/0.4)] rounded-xl font-medium"
                 onClick={() => scrollToSection("projects")}
               >
-                <span className="relative z-10 flex items-center gap-2">
-                  View My Work
-                  <ArrowDown className="w-4 h-4 rotate-[-90deg] group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-glow to-neon opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md"></div>
+                View My Work
+                <ArrowDown className="w-4 h-4 ml-2 -rotate-90 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
-                className="group relative border-2 border-neon/30 text-neon hover:bg-neon/10 hover:border-neon backdrop-blur-sm bg-background/10 transition-all duration-300 hover:scale-105"
+                className="border-2 border-neon/30 text-neon hover:bg-neon/10 hover:border-neon backdrop-blur-sm rounded-xl font-medium transition-all duration-300"
                 onClick={() => scrollToSection("contact")}
               >
-                <span className="flex items-center gap-2">
-                  Get in Touch
-                  <Mail className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
-                </span>
+                Get in Touch
+                <Mail className="w-4 h-4 ml-2" />
               </Button>
             </div>
 
-            {/* Enhanced Social Links */}
-            <div className="flex items-center gap-6 pt-8">
-              <div className="flex items-center gap-4">
-                {[
-                  { href: "https://github.com/LikithsaiKovi", icon: Github, label: "GitHub" },
-                  { href: "https://linkedin.com/in/likithsaikovi", icon: Linkedin, label: "LinkedIn" },
-                  { href: "mailto:sailikith511@gmail.com", icon: Mail, label: "Email" }
-                ].map((social, index) => (
-                  <a 
-                    key={index}
-                    href={social.href} 
-                    target={social.href.startsWith('mailto:') ? undefined : "_blank"}
-                    rel={social.href.startsWith('mailto:') ? undefined : "noopener noreferrer"}
-                    className="group relative p-3 bg-card/30 border border-border/30 rounded-xl backdrop-blur-sm transition-all duration-300 hover:bg-neon/10 hover:border-neon/50 hover:scale-110 hover:shadow-[0_0_20px_rgba(0,255,0,0.2)]"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-neon transition-colors duration-300" />
-                  </a>
-                ))}
-              </div>
-              <div className="h-6 w-px bg-border/50"></div>
-              <span className="text-sm text-muted-foreground/60 font-light">Let's connect</span>
+            {/* Social Links */}
+            <div className="flex items-center gap-4 pt-4">
+              {[
+                { href: "https://github.com/LikithsaiKovi", icon: Github, label: "GitHub" },
+                { href: "https://linkedin.com/in/likithsaikovi", icon: Linkedin, label: "LinkedIn" },
+                { href: "mailto:sailikith511@gmail.com", icon: Mail, label: "Email" },
+              ].map((social) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target={social.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={social.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                  className="p-3 glass-card rounded-xl transition-all duration-300 hover:bg-neon/10 hover:border-neon/40 hover:shadow-[0_0_20px_hsl(var(--neon)/0.15)]"
+                  aria-label={social.label}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <social.icon className="w-5 h-5 text-muted-foreground hover:text-neon transition-colors" />
+                </motion.a>
+              ))}
+              <div className="h-6 w-px bg-border/50 mx-2" />
+              <span className="text-sm text-muted-foreground/60 font-mono">Let's connect</span>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Enhanced Profile Section */}
-          <div className="flex justify-center lg:justify-end animate-slide-in-right">
+          {/* Profile */}
+          <motion.div
+            className="flex justify-center lg:justify-end"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div className="relative group">
-              {/* Main Profile Container */}
-              <div className="relative w-80 h-80 rounded-full bg-gradient-to-br from-background via-card to-background border border-border/30 backdrop-blur-sm overflow-hidden">
-                {/* Animated border */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon via-neon-glow to-neon p-[2px] animate-[spin_3s_linear_infinite]">
-                  <div className="w-full h-full rounded-full bg-background"></div>
+              {/* Profile ring */}
+              <div className="relative w-72 h-72 md:w-80 md:h-80">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-neon via-neon-glow to-neon p-[2px] animate-[spin_6s_linear_infinite]">
+                  <div className="w-full h-full rounded-full bg-background" />
                 </div>
-                
-                {/* Content */}
-                <div className="absolute inset-4 rounded-full bg-gradient-to-br from-card/80 to-background/60 backdrop-blur-xl border border-border/20 overflow-hidden">
-                  <div className="relative w-full h-full">
-                    {/* Profile Image */}
-                    <img 
-                      src="/lovable-uploads/c0fe98f9-143d-4a0f-a6d1-d5b53c9444c1.png"
-                      alt="Kovi Venkata Likith Sai - AI & Data Science Enthusiast"
-                      className="w-full h-full object-cover object-center rounded-full"
-                    />
-                    
-                    {/* Overlay gradient for better integration */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent rounded-full"></div>
-                    
-                    {/* Tech stack indicators */}
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-neon/20 rounded-full border border-neon/30 flex items-center justify-center backdrop-blur-sm">
-                      <Code className="w-4 h-4 text-neon" />
-                    </div>
-                    <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-neon-glow/20 rounded-full border border-neon/30 flex items-center justify-center backdrop-blur-sm">
-                      <Database className="w-4 h-4 text-neon" />
-                    </div>
-                  </div>
+                <div className="absolute inset-3 rounded-full overflow-hidden border-2 border-background">
+                  <img
+                    src="/lovable-uploads/c0fe98f9-143d-4a0f-a6d1-d5b53c9444c1.png"
+                    alt="Kovi Venkata Likith Sai - AI & Data Science Enthusiast"
+                    className="w-full h-full object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
                 </div>
-
-                {/* Inner glow effect */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-neon/5 to-transparent blur-xl"></div>
               </div>
 
-              {/* Floating Tech Elements */}
-              <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-neon/20 to-neon-glow/20 rounded-xl border border-neon/20 backdrop-blur-sm flex items-center justify-center animate-float">
-                <Sparkles className="w-6 h-6 text-neon" />
-              </div>
-              
-              <div className="absolute -bottom-6 -left-6 w-10 h-10 bg-gradient-to-br from-neon-glow/20 to-neon/20 rounded-lg border border-neon/20 backdrop-blur-sm flex items-center justify-center animate-float" style={{ animationDelay: '1s' }}>
-                <div className="w-3 h-3 bg-neon rounded-full animate-pulse"></div>
-              </div>
-
-              <div className="absolute top-1/4 -left-8 w-6 h-6 bg-neon/10 rounded-full animate-float border border-neon/30" style={{ animationDelay: '0.5s' }}></div>
-              
-              <div className="absolute bottom-1/3 -right-4 w-4 h-4 bg-neon-glow/20 rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
+              {/* Floating elements */}
+              <motion.div
+                className="absolute -top-4 -right-4 w-12 h-12 glass-card rounded-2xl flex items-center justify-center"
+                animate={{ y: [-4, 4, -4] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Code className="w-5 h-5 text-neon" />
+              </motion.div>
+              <motion.div
+                className="absolute -bottom-4 -left-4 w-10 h-10 glass-card rounded-xl flex items-center justify-center"
+                animate={{ y: [4, -4, 4] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              >
+                <Database className="w-4 h-4 text-neon" />
+              </motion.div>
+              <motion.div
+                className="absolute top-1/2 -right-8 w-3 h-3 bg-neon/40 rounded-full"
+                animate={{ scale: [1, 1.5, 1], opacity: [0.4, 0.8, 0.4] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
 
               {/* Ambient glow */}
-              <div className="absolute inset-0 rounded-full bg-neon/5 blur-3xl group-hover:bg-neon/10 transition-colors duration-500"></div>
+              <div className="absolute inset-0 rounded-full bg-neon/5 blur-[60px] group-hover:bg-neon/10 transition-all duration-700" />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <button 
-            onClick={() => scrollToSection("about")}
-            className="text-neon hover:text-neon-glow transition-colors duration-300"
-          >
-            <ArrowDown className="w-6 h-6" />
-          </button>
-        </div>
+        <motion.button
+          onClick={() => scrollToSection("about")}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-neon/60 hover:text-neon transition-colors"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <ArrowDown className="w-5 h-5" />
+        </motion.button>
       </div>
     </section>
   );
