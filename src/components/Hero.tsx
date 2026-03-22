@@ -68,6 +68,10 @@ const Hero = () => {
                   <Database className="w-4 h-4 text-neon" />
                   <span className="text-sm font-medium">ML</span>
                 </div>
+                <div className="flex items-center gap-2 px-3 py-2 bg-card/50 border border-border/50 rounded-lg backdrop-blur-sm">
+                  <Database className="w-4 h-4 text-neon" />
+                  <span className="text-sm font-medium">Data Analysis</span>
+                </div>
                 <div className="w-2 h-2 bg-neon/30 rounded-full animate-pulse"></div>
               </div>
             </div>
