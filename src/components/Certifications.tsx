@@ -105,7 +105,6 @@ const Certifications = () => {
       skills: ["AI Agents", "Google AI", "Machine Learning", "LLMs"]
     }
   ];
-  ];
 
   return (
     <section id="certifications" className="py-20 bg-background">
