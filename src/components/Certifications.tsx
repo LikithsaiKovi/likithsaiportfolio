@@ -11,6 +11,8 @@ import nxtwaveCert from "@/assets/cert-nxtwave-genai.jpg";
 import ccbpCert from "@/assets/cert-ccbp-xpm.png";
 import novitechCert from "@/assets/cert-novitech-analytics.png";
 import questCert from "@/assets/cert-quest-2024.jpg";
+import infotactCert from "@/assets/cert-infotact-internship.png";
+import kaggleCert from "@/assets/cert-kaggle-ai-agents.png";
 
 const Certifications = () => {
   const certifications = [
