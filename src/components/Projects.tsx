@@ -70,13 +70,23 @@ const projects: Project[] = [
   },
   {
     title: "Demand Forecasting System",
-    description: "Demand forecasting pipeline with time-series backtesting and KPI-driven evaluation.",
+    description: "Intelligent demand forecasting pipeline with time-series backtesting, model comparison (Moving Average → XGBoost/Prophet), and KPI-driven evaluation translating accuracy into cost savings.",
     image: "/lovable-uploads/0223f1b3-30f9-4af3-a021-991d8d380a95.png",
-    tech: ["Python", "Scikit-learn", "XGBoost", "Time Series"],
+    tech: ["Python", "Scikit-learn", "XGBoost", "Pandas", "Time Series"],
     category: "Data Analytics",
-    features: ["Time-series forecasting", "Backtesting (MAE/RMSE/MAPE)", "Model comparison", "Inventory recommendations"],
+    features: ["Time-series forecasting with backtesting", "MAE/RMSE/MAPE evaluation", "Baseline → advanced model comparison", "Inventory planning recommendations"],
     demoLink: "#",
-    codeLink: "https://github.com/LikithsaiKovi/Project-3-Intelligent-Demand-Forecasting-Business-Optimization-System-"
+    codeLink: "https://github.com/LikithsaiKovi/Project-2-Intelligent-Demand-Forecasting-Business-Optimization-System-"
+  },
+  {
+    title: "Walmart Sales Analysis",
+    description: "Exploratory data analysis on Walmart sales data uncovering seasonal trends, store performance patterns, and key revenue drivers.",
+    image: "/lovable-uploads/0223f1b3-30f9-4af3-a021-991d8d380a95.png",
+    tech: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+    category: "Data Analytics",
+    features: ["Sales trend analysis", "Store performance comparison", "Seasonal pattern detection", "Revenue driver insights"],
+    demoLink: "#",
+    codeLink: "https://github.com/LikithsaiKovi"
   },
   {
     title: "Scientific Publications EDA",
