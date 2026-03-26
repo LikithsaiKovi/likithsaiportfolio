@@ -60,23 +60,33 @@ const projects: Project[] = [
   },
   {
     title: "Retail Analytics – RFM Segmentation",
-    description: "End-to-end RFM customer segmentation with PostgreSQL Customer 360 data model and reusable SQL views.",
+    description: "End-to-end RFM customer segmentation with a PostgreSQL Customer 360 data model, star-schema design (dim_customer, dim_product, fact_sales), and reusable SQL views for segment validation.",
     image: "/lovable-uploads/0223f1b3-30f9-4af3-a021-991d8d380a95.png",
     tech: ["Python", "PostgreSQL", "SQL", "Pandas"],
     category: "Data Analytics",
-    features: ["RFM feature engineering", "Customer segmentation", "Star-schema data model", "Customer 360 SQL views"],
+    features: ["RFM feature engineering (Recency/Frequency/Monetary)", "Segmentation: Champions / Loyal / At Risk / Churn Risk", "SQL views: customer_360, rfm_base, rfm_scores, rfm_segments", "Query guide for diagnostics & KPI validation"],
     demoLink: "#",
     codeLink: "https://github.com/LikithsaiKovi/Project-1-Data-Analysis-Retail-Analytics"
   },
   {
-    title: "Demand Forecasting System",
-    description: "Demand forecasting pipeline with time-series backtesting and KPI-driven evaluation.",
+    title: "Intelligent Demand Forecasting & Business Optimization",
+    description: "Demand forecasting pipeline to reduce stockouts/overstock, with baseline → advanced models (XGBoost/Prophet), time-series backtesting, and cost-saving recommendations.",
     image: "/lovable-uploads/0223f1b3-30f9-4af3-a021-991d8d380a95.png",
-    tech: ["Python", "Scikit-learn", "XGBoost", "Time Series"],
+    tech: ["Python", "Scikit-learn", "XGBoost", "Pandas", "Time Series"],
     category: "Data Analytics",
-    features: ["Time-series forecasting", "Backtesting (MAE/RMSE/MAPE)", "Model comparison", "Inventory recommendations"],
+    features: ["Baseline → advanced model comparison", "Backtesting with MAE/RMSE/MAPE", "Error reduction → cost savings translation", "Inventory planning recommendations"],
     demoLink: "#",
-    codeLink: "https://github.com/LikithsaiKovi/Project-3-Intelligent-Demand-Forecasting-Business-Optimization-System-"
+    codeLink: "https://github.com/LikithsaiKovi/Project-2-Intelligent-Demand-Forecasting-Business-Optimization-System-"
+  },
+  {
+    title: "Walmart Sales Analysis",
+    description: "Exploratory data analysis on Walmart sales data uncovering seasonal trends, store performance patterns, and promotional impact on revenue.",
+    image: "/lovable-uploads/0223f1b3-30f9-4af3-a021-991d8d380a95.png",
+    tech: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+    category: "Data Analytics",
+    features: ["Seasonal trend analysis", "Store performance comparison", "Promotional impact assessment", "Data-driven business insights"],
+    demoLink: "#",
+    codeLink: "https://github.com/LikithsaiKovi"
   },
   {
     title: "Scientific Publications EDA",
