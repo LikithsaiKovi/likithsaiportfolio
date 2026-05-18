@@ -79,7 +79,7 @@ const projects: Project[] = [
     category: "Data Analytics",
     features: ["Seasonal trend analysis", "Store performance comparison", "Promotional impact assessment", "Data-driven business insights"],
     demoLink: "#",
-    codeLink: "https://github.com/LikithsaiKovi"
+    codeLink: "https://github.com/LikithsaiKovi/Project-3-Intelligent-Demand-Forecasting-Business-Optimization-System-"
   },
   {
     title: "Scientific Publications EDA",
