@@ -72,16 +72,6 @@ const projects: Project[] = [
     codeLink: "https://github.com/LikithsaiKovi/Project-1-Data-Analysis-Retail-Analytics"
   },
   {
-    title: "Intelligent Demand Forecasting & Business Optimization",
-    description: "Demand forecasting pipeline to reduce stockouts/overstock, with baseline → advanced models (XGBoost/Prophet), time-series backtesting, and cost-saving recommendations.",
-    image: "/lovable-uploads/0223f1b3-30f9-4af3-a021-991d8d380a95.png",
-    tech: ["Python", "Scikit-learn", "XGBoost", "Pandas", "Time Series"],
-    category: "Data Analytics",
-    features: ["Baseline → advanced model comparison", "Backtesting with MAE/RMSE/MAPE", "Error reduction → cost savings translation", "Inventory planning recommendations"],
-    demoLink: "#",
-    codeLink: "https://github.com/LikithsaiKovi/Project-2-Intelligent-Demand-Forecasting-Business-Optimization-System-"
-  },
-  {
     title: "Walmart Sales Analysis",
     description: "Exploratory data analysis on Walmart sales data uncovering seasonal trends, store performance patterns, and promotional impact on revenue.",
     image: walmartSalesImg,
@@ -89,7 +79,7 @@ const projects: Project[] = [
     category: "Data Analytics",
     features: ["Seasonal trend analysis", "Store performance comparison", "Promotional impact assessment", "Data-driven business insights"],
     demoLink: "#",
-    codeLink: "https://github.com/LikithsaiKovi"
+    codeLink: "https://github.com/LikithsaiKovi/Project-3-Intelligent-Demand-Forecasting-Business-Optimization-System-"
   },
   {
     title: "Scientific Publications EDA",
