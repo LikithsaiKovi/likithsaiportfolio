@@ -5,6 +5,9 @@ import { ExternalLink, Github, Eye } from "lucide-react";
 import { useState } from "react";
 import AnimateIn, { StaggerContainer, StaggerItem } from "./AnimateIn";
 import { motion, AnimatePresence } from "framer-motion";
+import walmartSalesImg from "@/assets/project-walmart-sales.png";
+import chocoSalesImg from "@/assets/project-choco-sales.png";
+import retailDashboardImg from "@/assets/project-retail-dashboard.png";
 
 interface Project {
   title: string;
