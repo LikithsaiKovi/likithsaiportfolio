@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import walmartSalesImg from "@/assets/project-walmart-sales.png";
 import chocoSalesImg from "@/assets/project-choco-sales.png";
 import retailDashboardImg from "@/assets/project-retail-dashboard.png";
+import salesforceImg from "@/assets/project-salesforce.png";
 
 interface Project {
   title: string;
@@ -104,7 +105,7 @@ const projects: Project[] = [
   {
     title: "Salesforce Volunteer & Donation Mgmt",
     description: "Salesforce app for nonprofit operations: volunteer management, donation tracking, event reporting.",
-    image: "/lovable-uploads/cc93f87b-2fa1-4aff-aa10-9ebc30e71c03.png",
+    image: salesforceImg,
     tech: ["Salesforce", "Apex", "Lightning", "Flows"],
     category: "Full Stack",
     features: ["Volunteer tracking", "Donation tracking & reporting", "Event dashboards", "Automation via Flows"],
