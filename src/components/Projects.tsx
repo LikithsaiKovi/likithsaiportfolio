@@ -5,6 +5,9 @@ import { ExternalLink, Github, Eye } from "lucide-react";
 import { useState } from "react";
 import AnimateIn, { StaggerContainer, StaggerItem } from "./AnimateIn";
 import { motion, AnimatePresence } from "framer-motion";
+import walmartSalesImg from "@/assets/project-walmart-sales.png";
+import chocoSalesImg from "@/assets/project-choco-sales.png";
+import retailDashboardImg from "@/assets/project-retail-dashboard.png";
 
 interface Project {
   title: string;
@@ -61,7 +64,7 @@ const projects: Project[] = [
   {
     title: "Retail Analytics – RFM Segmentation",
     description: "End-to-end RFM customer segmentation with a PostgreSQL Customer 360 data model, star-schema design (dim_customer, dim_product, fact_sales), and reusable SQL views for segment validation.",
-    image: "/lovable-uploads/0223f1b3-30f9-4af3-a021-991d8d380a95.png",
+    image: retailDashboardImg,
     tech: ["Python", "PostgreSQL", "SQL", "Pandas"],
     category: "Data Analytics",
     features: ["RFM feature engineering (Recency/Frequency/Monetary)", "Segmentation: Champions / Loyal / At Risk / Churn Risk", "SQL views: customer_360, rfm_base, rfm_scores, rfm_segments", "Query guide for diagnostics & KPI validation"],
@@ -81,7 +84,7 @@ const projects: Project[] = [
   {
     title: "Walmart Sales Analysis",
     description: "Exploratory data analysis on Walmart sales data uncovering seasonal trends, store performance patterns, and promotional impact on revenue.",
-    image: "/lovable-uploads/0223f1b3-30f9-4af3-a021-991d8d380a95.png",
+    image: walmartSalesImg,
     tech: ["Python", "Pandas", "Matplotlib", "Seaborn"],
     category: "Data Analytics",
     features: ["Seasonal trend analysis", "Store performance comparison", "Promotional impact assessment", "Data-driven business insights"],
@@ -101,7 +104,7 @@ const projects: Project[] = [
   {
     title: "Power BI Sales Dashboard",
     description: "Sales analytics dashboard with market trends, KPIs, and interactive visualizations.",
-    image: "/lovable-uploads/0223f1b3-30f9-4af3-a021-991d8d380a95.png",
+    image: chocoSalesImg,
     tech: ["Power BI", "DAX", "Excel", "Data Modeling"],
     category: "Data Analytics",
     features: ["Sales trend analysis", "KPI monitoring", "Interactive filters", "Automated reporting"],
